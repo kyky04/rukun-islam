@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rukunislam.uinbdg.id.rukunislam.fragments.QuranFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_dark"
+        android:id="@+id/tv_empty"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Tidak Ditemukan"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_sumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</FrameLayout>
