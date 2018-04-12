@@ -95,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tabSumber.setVisibility(View.VISIBLE);
-                final String hasil = etSearch.getText().toString();
+                String hasil = etSearch.getText().toString();
+                if (hasil.equals("solat") || hasil.equals("salat") || hasil.equals("sholat")) {
+                    hasil = "shalat";
+                }
                 final Snackbar snackbar = Snackbar.make(linearUtama, hasil, Snackbar.LENGTH_SHORT);
                 searchSumberHadits(hasil, listSumberHadits);
                 searchSumberQuran(hasil, listSumberQuran);
@@ -115,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         List<SumberQuran> listSumberQuran = new ArrayList<>();
         for (int i = 0; i < listSumber.size(); i++) {
             if (listSumber.get(i).getTerjemah().toLowerCase().contains(textSearch.toLowerCase())) {
-                kmp(listSumber.get(i).getTerjemah(),etSearch.getText().toString());
+                kmp(listSumber.get(i).getTerjemah(), etSearch.getText().toString());
                 SumberQuran sumberQuran = listSumber.get(i);
                 listSumberQuran.add(sumberQuran);
             }
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         List<SumberHadits> listSumberQuran = new ArrayList<>();
         for (int i = 0; i < listSumber.size(); i++) {
             if (listSumber.get(i).getTerjemah_hadits().toLowerCase().contains(textSearch.toLowerCase())) {
-                kmp(listSumber.get(i).getTerjemah_hadits(),etSearch.getText().toString());
+                kmp(listSumber.get(i).getTerjemah_hadits(), etSearch.getText().toString());
                 SumberHadits sumberQuran = listSumber.get(i);
                 listSumberQuran.add(sumberQuran);
             }
